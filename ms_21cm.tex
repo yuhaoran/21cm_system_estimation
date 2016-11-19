@@ -92,7 +92,7 @@ these are the two symbolic modern radio telescopes in China.
 The single-dish FAST, like Arecibo\footnote{https://www.naic.edu},
 uses its gigantic single dish to achieve ultimate sensitivity, whereas
 Tianlai, designed like CHIME\footnote{http://chime.phas.ubc.ca},
-has ultra wide field of view per day, by
+has ultra wide field of view (FoV) per day, by
 using its cylindrical reflectors and arrays of receivers to
 scan the northern hemisphere of the sky as the Earth turns.
 
@@ -107,14 +107,66 @@ and section \ref{sec.Tianlai} respectively.
 Conclusions are made in section \ref{sec.conclusion}.
 
 \section{Sensitivity}\label{sec.sensitivity}
-
+To find possible 21-cm absorption systems, radio telescopes
+could be devised to scan the radio sources in
 NRAO VLA Sky Survey (NVSS)\footnote{http://www.cv.nrao.edu/nvss/}.
+If we assume the distributions of radio sources $n_R$ and
+{\HI} clouds $n_{\rm \HI}$ are uniform over the sky, then the redshift
+distribution of the 21-cm absorption systems $n_{\rm system}$ would be
+\begin{equation}
+    n_{\rm system}(z)=n_{\rm \HI}(z)\int_z^\infty n_R(z')\diff z'
+\end{equation}
+regardless of the observation sensitivity,
+where $n_R(z)$ is given by equation (26) of \cite{2010A&ARv..18....1D}.
+Spacial distribution of {\HI} is poorly understood and is to be
+studied in upcoming surveys.
+Recent studies show that the number density of
+absorbers to be $\diff n_{\rm \HI}/\diff z\sim 0.045$
+per line of sight
+\citep{2005ARA&A..43..861W,2007ASSP....3..501Z}, so we apply this value
+in the following forcast.
 
-Recent studies show that the number density of absorbers to be $\diff N/\diff z\sim 0.45$
-\citep{2005ARA&A..43..861W,2007ASSP....3..501Z}.
+Observation sensitivity depends on the background fluxes and foreground
+absorptions (current section), as well as telescope configurations and
+observation strategies (section \ref{sec.FAST},\ref{sec.Tianlai}).
 
-Recent discoveries of 21-cm absorption systems have about $20\%$ fractional depth
-\citep{2015MNRAS.453.1249A,2015MNRAS.453.1268Z}.
+NVSS contains 2 million sources (with declination $\delta >-40^{\circ}$,
+cover 82\% of the sky) stronger than 2.5
+mJy at $\nu=$1.4 GHz \citep{1998AJ....115.1693C} and their flux
+distribution $n_R(F)$ is given by \cite{1984ApJ...287..461C}.
+Redshifted {\HI} clouds absorb lower frequency bands where
+the radio sources are typically brighter by $\nu^{-0.7}$
+\citep{1998AJ....115.1693C}, or $(1+z_{\rm \HI})^{0.7}$.
+The error of the measurement $\Delta F$ is given by
+\begin{equation}
+    \Delta F={\rm SEFD}/\sqrt{n_{\rm pol}\Delta\nu\Delta t},
+\end{equation}
+where SEFD is the system equivalent flux density, $n_{\rm pol}$
+is the number of polarizations, $\Delta\nu$ is the line width and
+$\Delta t$ is the integration time. $\Delta\nu=(u_{\rm width}/c)\nu_{\rm obs}$,
+where $u_{\rm width}$ is the equivalent line width of the {\HI}
+absorber. The properties of 21-cm absorbers are primarily derived from
+followup studies of optical absorbers. The discovery rate from the
+cross correlation is a lower bound on the expect number of absorbers,
+since high column density systems in the CNM may systematically
+obscure potential background optical sources \citep{2014PhRvL.113d1303Y}. There areonly 3 blind radio detections, and a survey may discover more systems
+which are optically obscured. They would likely be cold and at high
+column density. For sensitivity purposes, we treat all sources as
+$u_{\rm width}=2\ {\rm km\ s}^{-1}$
+\citep{1982ApJ...259..495W,2005ARA&A..43..861W}.
+$\nu_{\rm obs}$ is the observation frequency. For redshifted
+21-cm absorption systems, $\nu_{\rm obs}=1420\ {\rm MHz}/(1+z_{\rm \HI})$.
+The integration time $\Delta t=(n_{\rm obs}\times 24\ {\rm h})\tau$,
+where $n_{\rm obs}$ is the number of days an object is scanned,
+and $\tau=\lambda/2\pi D\cos\delta$ is the fractional time the object
+transits the FoV ($\lambda_{\rm obs}\ll D$ or $\delta\nrightarrow\pi/2$).
+For 21-cm absorption systems $\lambda_{\rm obs}=21\ {\rm cm}\times (1+z_{\rm obs})$.
+
+In the forecast we count $>10\sigma$ detections, i.e., the absorption
+line depth is at least $10\Delta F$. The optical depth of {\HI} absorbers
+are also poorly understood. Recent discoveries of 21-cm absorption systems
+have about $r=20\%$ fractional depth \citep{2015MNRAS.453.1249A,2015MNRAS.453.1268Z},
+and we apply this value. Thus, all systems with $rF>10\Delta F$ are counted.
 
 
 
@@ -130,6 +182,8 @@ Result: 90 per month.
 \section{Tianlai estimation}\label{sec.Tianlai}
 
 Parameters:
+
+Different declinations have different SEFD.
 
 Result: 80 per year.
 
