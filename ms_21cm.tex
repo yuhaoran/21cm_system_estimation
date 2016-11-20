@@ -56,7 +56,7 @@ in the past 50 years.
 }
 
 \authorrunning{Yu et al.}
-\titlerunning{Searching 21-cm absorption systems}
+\titlerunning{Searching 21-cm Absorption Systems}
 
 \maketitle
 
@@ -200,13 +200,13 @@ One-month-scan ($n_{\rm obs}=30$) around celestial equator by FAST will have
 $N_R\simeq 10^4$ sources whose $F\gtrsim 0.11\ {\rm Jy}$ on 1.4 GHz.
 We further assume the independency between $n_R(F)$, $n_R(z)$
 and $n_{\rm\HI}(z)$, from $n_{\rm system}(z)$ by integrating
-equation (\ref{eq.n_system}), there will be $N_{\rm system}\simeq 90$ absorption
+equation (\ref{eq.n_system}), there will be $N_{\rm system}\simeq 90 {\rm /month}$ absorption
 systems found in redshift range $0<z<0.2$.
 
 
 \section{Tianlai estimation}\label{sec.Tianlai}
 
-Tianlai is currently $30\times 12 {\rm m}$ area with
+Tianlai is currently $30\times 12\ {\rm m}$ area with
 ${\rm SEFD}\simeq 300\ {\rm Jy}$. Different from FAST, however,
 Tianlai scans all sources in the northern hemisphere of the sky
 everyday, and one needs longer periods integration to
@@ -219,11 +219,33 @@ $\phi_{\rm site}=+44^\circ$ and its cylinders are fixed, only
 objects at the zenith ($\delta=\phi_{\rm cite}=44^\circ$) fully utilize
 the SEFD. On the other hand, higher declination objects
 have longer integration time per day. Thus, $\Delta F$ is
-a function of $\delta$.
-
-Different declinations have different SEFD.
-
-Result: 80 per year.
+a function of $\delta$, 
+\begin{equation}\label{eq.delta_F_delta}
+    \Delta F(\delta) = \frac{\rm SEFD}{\cos(\delta-\phi_{\rm site})}
+    {\sqrt{\frac{\cos\delta}{n_{\rm pol}\Delta\nu\Delta t(\delta=0)}}},
+\end{equation}
+where $\Delta t(\delta=0)\simeq 1.17\times 10^5\ {\rm sec}$ is the
+total integration time (1-year survey) for objects on celestial equator,
+for Tianlai frequency range 800 to 900 MHz ($0.58<z<0.78$).
+The effective $N_R$ is given by
+\begin{equation}\label{eq.N_R_eff}
+    N_R=\int_0^{\pi/2}2\pi\cos\delta
+    \left(\int_{10\Delta F(\delta)/r}^{+\infty}
+    n_R(F')\diff F'\right)
+    \diff\delta.
+\end{equation}
+Note that the inner flux integration converges as
+$F'\rightarrow+\infty$ because $n_R(F)\sim F^{-2.5}$.
+Additionally, even if $\tau=\lambda_{\rm obs}/2\pi D\cos\delta$
+fails at $\delta\rightarrow\pi/2$ (the north pole
+$\tau(\delta=\pi/2)=1$ is always in FoV),
+the outer declination integration also converges
+as $\delta\rightarrow\pi/2$, because the pole area is
+tiny and neglectable.
+Equation (\ref{eq.N_R_eff}) gives $N_R\simeq 1.3\times 10^4$,
+and applying it to equation (\ref{eq.n_system}) again
+we get $N_{\rm system}\simeq 80 {\rm /year}$ absorption
+systems found in redshift range $0.58<z<0.78$.
 
 \section{Conclusion}\label{sec.conclusion}
 
