@@ -113,7 +113,7 @@ NRAO VLA Sky Survey (NVSS)\footnote{http://www.cv.nrao.edu/nvss/}.
 If we assume the distributions of radio sources $n_R$ and
 {\HI} clouds $n_{\rm \HI}$ are uniform over the sky, then the redshift
 distribution of the 21-cm absorption systems $n_{\rm system}$ would be
-\begin{equation}
+\begin{equation}\label{eq.n_system}
     n_{\rm system}(z)=n_{\rm \HI}(z)\int_z^\infty n_R(z')\diff z'
 \end{equation}
 regardless of the observation sensitivity,
@@ -130,7 +130,7 @@ Observation sensitivity depends on the background fluxes and foreground
 absorptions (current section), as well as telescope configurations and
 observation strategies (section \ref{sec.FAST},\ref{sec.Tianlai}).
 
-NVSS contains 2 million sources (with declination $\delta >-40^{\circ}$,
+NVSS contains 2 million sources (with declination $\delta >-40^\circ$,
 cover 82\% of the sky) stronger than 2.5
 mJy at $\nu=$1.4 GHz \citep{1998AJ....115.1693C} and their flux
 distribution $n_R(F)$ is given by \cite{1984ApJ...287..461C}.
@@ -138,7 +138,7 @@ Redshifted {\HI} clouds absorb lower frequency bands where
 the radio sources are typically brighter by $\nu^{-0.7}$
 \citep{1998AJ....115.1693C}, or $(1+z_{\rm \HI})^{0.7}$.
 The error of the measurement $\Delta F$ is given by
-\begin{equation}
+\begin{equation}\label{eq.delta_F}
     \Delta F={\rm SEFD}/\sqrt{n_{\rm pol}\Delta\nu\Delta t},
 \end{equation}
 where SEFD is the system equivalent flux density, $n_{\rm pol}$
@@ -149,7 +149,8 @@ absorber. The properties of 21-cm absorbers are primarily derived from
 followup studies of optical absorbers. The discovery rate from the
 cross correlation is a lower bound on the expect number of absorbers,
 since high column density systems in the CNM may systematically
-obscure potential background optical sources \citep{2014PhRvL.113d1303Y}. There areonly 3 blind radio detections, and a survey may discover more systems
+obscure potential background optical sources \citep{2014PhRvL.113d1303Y}. There are
+only 3 blind radio detections, and a survey may discover more systems
 which are optically obscured. They would likely be cold and at high
 column density. For sensitivity purposes, we treat all sources as
 $u_{\rm width}=2\ {\rm km\ s}^{-1}$
@@ -158,9 +159,12 @@ $\nu_{\rm obs}$ is the observation frequency. For redshifted
 21-cm absorption systems, $\nu_{\rm obs}=1420\ {\rm MHz}/(1+z_{\rm \HI})$.
 The integration time $\Delta t=(n_{\rm obs}\times 24\ {\rm h})\tau$,
 where $n_{\rm obs}$ is the number of days an object is scanned,
-and $\tau=\lambda/2\pi D\cos\delta$ is the fractional time the object
+and $\tau=\lambda_{\rm obs}/2\pi D\cos\delta$ is the fractional time the object
 transits the FoV ($\lambda_{\rm obs}\ll D$ or $\delta\nrightarrow\pi/2$).
 For 21-cm absorption systems $\lambda_{\rm obs}=21\ {\rm cm}\times (1+z_{\rm obs})$.
+$\Delta F$ is redshift- (frequency-) independent, as $(1+z_{\rm obs})$ terms
+from integration time and line width cancel out
+in the equation (\ref{eq.delta_F}).
 
 In the forecast we count $>10\sigma$ detections, i.e., the absorption
 line depth is at least $10\Delta F$. The optical depth of {\HI} absorbers
@@ -173,15 +177,49 @@ and we apply this value. Thus, all systems with $rF>10\Delta F$ are counted.
 
 \section{FAST estimation}\label{sec.FAST}
 
-Parameters:
+FAST has a fixed 500 m dish, and a circle of 300 m diameter is held
+in the correct parabolic shape, being used at any one time. This
+enables its zenith angle to be $40^\circ$ and it can scan objects
+in declination range $-14^\circ 12'<\delta<65^\circ 48'$.
+The 19-beam feed-horn array at L band will be the primary survey
+instrument for FAST. For a single day it can scan $0.762^\circ$
+in declination $\delta$. FAST survey strategy scans each object
+only once ($n_{\rm obs}=1$), and with its high sensitivity,
+even faint sources are identified in a single day. 
+We assume a one-month survey by FAST
+around the celestial equator for simplicity. FAST observes
+1.2 to 1.4 GHz (redshift $z_{\rm \HI}<0.2$), so objects on celestial equator
+have average transit time $\Delta t \simeq 10\ {\rm sec.}$
+Taking $\Delta\nu\simeq$ 9 kHz, $n_{\rm pol}=2$, and
+${\rm SEFD}=1$ Jy for FAST.
+we have $\Delta F \simeq\ 2.3 {\rm mJy}$.
+Taking into account the $\nu^{-0.7}$ flux boost at lower
+frequencies, $rF>10\Delta F$ requires $F\gtrsim 0.11\ {\rm Jy}$ on 1.4 GHz.
 
+One-month-scan ($n_{\rm obs}=30$) around celestial equator by FAST will have
+$N_R\simeq 10^4$ sources whose $F\gtrsim 0.11\ {\rm Jy}$ on 1.4 GHz.
+We further assume the independency between $n_R(F)$, $n_R(z)$
+and $n_{\rm\HI}(z)$, from $n_{\rm system}(z)$ by integrating
+equation (\ref{eq.n_system}), there will be $N_{\rm system}\simeq 90$ absorption
+systems found in redshift range $0<z<0.2$.
 
-
-Result: 90 per month.
 
 \section{Tianlai estimation}\label{sec.Tianlai}
 
-Parameters:
+Tianlai is currently $30\times 12 {\rm m}$ area with
+${\rm SEFD}\simeq 300\ {\rm Jy}$. Different from FAST, however,
+Tianlai scans all sources in the northern hemisphere of the sky
+everyday, and one needs longer periods integration to
+identify absorbers with fainter background sources.
+We forecast its one-year-survey ability of searching 21-cm
+absorption systems in the northern hemisphere.
+
+Because Tianlai locates at latitude
+$\phi_{\rm site}=+44^\circ$ and its cylinders are fixed, only
+objects at the zenith ($\delta=\phi_{\rm cite}=44^\circ$) fully utilize
+the SEFD. On the other hand, higher declination objects
+have longer integration time per day. Thus, $\Delta F$ is
+a function of $\delta$.
 
 Different declinations have different SEFD.
 
