@@ -1,7 +1,7 @@
 \documentclass[]{raa} 
 
 \usepackage{aas_macros}
-\usepackage{graphicx,times}
+\usepackage{graphicx,times,color}
 \usepackage{natbib}
 \usepackage{amssymb,amsmath}
 \bibpunct{(}{)}{;}{a}{}{,}
@@ -13,6 +13,8 @@
 \newcommand{\cpm}{{\small CUBEP$^3$M}}
 \newcommand{\smjustify}{\hspace{-0.1cm}}
 \newcommand{\HI}{{H{\small\,I}}}
+\newcommand{\tcb}{\textcolor{blue}}
+\newcommand{\tcr}{\textcolor{red}}
 \def\smwidth{0.48\textwidth}
 \def\smhwidth{0.48\textwidth}
 
@@ -43,16 +45,16 @@ Key Laboratory for Computational Astrophysics, National Astronomical Observatori
 \abstract{
 Neutral hydrogen clouds are known to exist in the Universe, however their spatial
 distributions and physical properties are poorly understood. Such missing information
-can be studied by the new generation Chinese radio telescopes by a blind searching
-of 21-cm absorption systems. We forecast the abilities of surveys of 21-cm absorption
+can be studied by the new generation Chinese radio telescopes through a blind searching
+of 21-cm absorption systems. We forecast the capabilities of surveys of 21-cm absorption
 systems by two representative radio telescopes in China --
 Five-hundred-meter Aperture Spherical radio Telescope (FAST) and
 Tianlai 21-cm cosmology experiment (Tianlai).
-The result shows that, in a few of years term,
-these telescopes with either high sensitivity (FAST)
-or wide field of view (Tianlai) can discover orders of magnitudes
-more 21-cm absorption systems, than the cumulative discoveries
-in the past 50 years. 
+Facilitated by either the high sensitivity (FAST)
+or the wide field of view (Tianlai) of these telescopes,
+\tcr{???} 21-cm absorption systems can be discovered in a few years,
+representing orders of magnitude improvement over the cumulative discoveries
+in the past half a century. 
 \keywords{}
 }
 
@@ -63,15 +65,15 @@ in the past 50 years.
 
 \section{Introduction}\label{sec.introduction}
 Neutral hydrogen (\HI) clouds are known to exist in the Universe,
-however only few of them are discovered in the past half a century,
+however relatively few of them are discovered in the past half a century,
 and we poorly understand their spatial distribution and physical
 properties \citep{2005ARA&A..43..861W}. 
 In damped Lyman-$\alpha$ absorption (DLA)
 systems, the radio spectrum is also substantially absorbed by the {\HI}
 hyperfine structure, whose rest frame wavelength is approximately 21 cm
-($\sim$1420 MHz in frequency). These systems are defined to have
+($1420405751.7667\pm 0.009$ Hz in frequency). These systems have
 at least $2\times 10^{20}$ cm$^{-2}$ {\HI} column density, thus being
-able to house cold 21-cm absorbing gas in the cold neutral medium (CNM).
+able to absorb the background with its cold {\HI} in their cold neutral medium (CNM).
 
 The 21-cm absorption systems are important in the study of the 
 distribution, location, temperature and structure of neutral gas,
@@ -81,29 +83,27 @@ Due to the narrow intrinsic line width, the 21-cm absorption systems
 are proposed to be used to directly measure the cosmic acceleration
 \citep{2012ApJ...761L..26D,2014PhRvL.113d1303Y}, via the 
 Sandage-Loeb (SL) effect \citep{1962ApJ...136..319S,1998ApJ...499L.111L}.
-The uncertainties of these decade-long proposals are from the poorly understood
-{\HI} clouds \citep{2014PhRvL.113d1303Y}.
-Path finder surveys, taking less than a year, are able
+The main source of uncertainty of such proposed measurements lies in our
+poor understandings of {\HI} clouds \citep{2014PhRvL.113d1303Y}.
+New surveys are required
 to improve our understandings of spatial distribution and physical
 properties of {\HI} clouds.
 This can be done by the Chinese new generation radio telescopes --
 Five-hundred-meter Aperture Spherical radio Telescope (FAST)
 \citep{2016RaSc...51.1060L} and Tianlai 21-cm cosmology experiment
-(Tianlai) \citep{2012IJMPS..12..256C}. In the current and near future,
-these are the two symbolic new generation radio telescopes in China.
+(Tianlai) \citep{2012IJMPS..12..256C}.
 The single-dish FAST, like Arecibo\footnote{https://www.naic.edu},
 uses its gigantic single dish to achieve ultimate sensitivity, whereas
 Tianlai, designed like CHIME\footnote{http://chime.phas.ubc.ca},
-has ultra wide field of view (FoV) per day, by
+has ultra wide field of view (FoV) provided by its
 using its cylindrical reflectors and arrays of receivers to
-scan the northern hemisphere of the sky as the Earth turns.
+quickly scan the northern hemisphere of the sky as the Earth rotates.
 
-According to their different design and observing strategies,
-we forecast their abilities of blind searching of 21-cm absorption
+Considering their respective design and observing strategies,
+we forecast their capabilities of blind searching of 21-cm absorption
 systems. In section \ref{sec.sensitivity} we show the sensitivity
-estimation and related factors needed taken into account,
-and according to the configurations of FAST and Tianlai,
-we show their forecast in section \ref{sec.FAST}
+estimation and related factors for FAST and Tianlai.
+We present our forecast in section \ref{sec.FAST}
 and section \ref{sec.Tianlai} respectively.
 Conclusions are made in section \ref{sec.conclusion}.
 
@@ -112,17 +112,22 @@ To find possible 21-cm absorption systems, radio telescopes
 could be devised to scan the radio sources in
 NRAO VLA Sky Survey (NVSS)\footnote{http://www.cv.nrao.edu/nvss/}.
 If we assume the distributions of radio sources $n_R$ and
-{\HI} clouds $n_{\rm \HI}$ are uniform over the sky, then the redshift
+{\HI} clouds $n_{\rm \HI}$ are uncorrelated, the redshift
 distribution of the 21-cm absorption systems $n_{\rm system}$ would be
+\tcr{(still need a volume filling factor $K(z)$?)}
 \begin{equation}\label{eq.n_system}
-    n_{\rm system}(z)=n_{\rm \HI}(z)\int_z^\infty n_R(z')\diff z'
+    n_{\rm system}(z)=\tcr{n_{\rm \HI}(z)}\int_z^\infty n_R(z')\diff z'
 \end{equation}
+\tcr{(In my definition,
+$n_{\rm \HI}$ is the cloud regardless observable or not, 
+and $n_{\rm system}$ is the absorber, associated with a background source, absorbing the
+source flux on the line of sight to Earth.)}
 regardless of the observation sensitivity,
 where $n_R(z)$ is given by equation (26) of \cite{2010A&ARv..18....1D}.
 Spacial distribution of {\HI} is poorly understood and is to be
 studied in upcoming surveys.
 Recent studies show that the number density of
-absorbers to be $\diff n_{\rm \HI}/\diff z\sim 0.045$
+absorbers to be $\diff \tcr{n_{\rm \HI}}/\diff z= 0.045\pm0.006$
 per line of sight at low and medium redshift
 \citep{2005ARA&A..43..861W,2007ASSP....3..501Z}, so we apply this value
 in the following forcast.
@@ -137,11 +142,11 @@ distribution $n_R(F)$ is given by \cite{1984ApJ...287..461C}.
 Redshifted {\HI} clouds absorb lower frequency bands where
 the radio sources are typically brighter by $\nu^{-0.7}$
 \citep{1998AJ....115.1693C}, or $(1+z_{\rm \HI})^{0.7}$.
-The error of the measurement $\Delta F$ is given by
+The error of the measurement $\Delta F$ is given by \tcr{[reference]}
 \begin{equation}\label{eq.delta_F}
     \Delta F={\rm SEFD}/\sqrt{n_{\rm pol}\Delta\nu\Delta t},
 \end{equation}
-where SEFD is the system equivalent flux density, $n_{\rm pol}$
+where SEFD \tcr{(or $T_{\rm sys}$ TBD)} is the system equivalent flux density, $n_{\rm pol}$
 is the number of polarizations, $\Delta\nu$ is the line width and
 $\Delta t$ is the integration time. $\Delta\nu=(u_{\rm width}/c)\nu_{\rm obs}$,
 where $u_{\rm width}$ is the equivalent line width of the {\HI}
@@ -212,7 +217,7 @@ ${\rm SEFD}\simeq 300\ {\rm Jy}$. Different from FAST, however,
 Tianlai scans all sources in the northern hemisphere of the sky
 everyday, and one needs longer periods integration to
 identify absorbers with fainter background sources.
-We forecast its one-year-survey ability of searching 21-cm
+We forecast its one-year-survey capability of searching 21-cm
 absorption systems in the northern hemisphere.
 
 Because Tianlai locates at latitude
@@ -255,7 +260,7 @@ systems found in redshift range $0.58<z<0.78$.
 
 
 \section{Conclusion}\label{sec.conclusion}
-We forecast the ability of FAST and Tianlai telescopes to search 21-cm
+We forecast the capability of FAST and Tianlai telescopes to search 21-cm
 absorption systems. According to our assumptions, FAST is able
 to find $\simeq 90$ systems per month
 whereas TianLai can find $\simeq 80$ systems per year.
