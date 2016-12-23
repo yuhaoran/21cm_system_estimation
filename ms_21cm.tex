@@ -52,7 +52,7 @@ Five-hundred-meter Aperture Spherical radio Telescope (FAST) and
 Tianlai 21-cm cosmology experiment (Tianlai).
 Facilitated by either the high sensitivity (FAST)
 or the wide field of view (Tianlai) of these telescopes,
-\tcr{???} 21-cm absorption systems can be discovered in a few years,
+\tcr{??? [more than a thousand for FAST]} 21-cm absorption systems can be discovered in a few years,
 representing orders of magnitude improvement over the cumulative discoveries
 in the past half a century. 
 \keywords{}
@@ -142,7 +142,7 @@ distribution $n_R(F)$ is given by \cite{1984ApJ...287..461C}.
 Redshifted {\HI} clouds absorb lower frequency bands where
 the radio sources are typically brighter by $\nu^{-0.7}$
 \citep{1998AJ....115.1693C}, or $(1+z_{\rm \HI})^{0.7}$.
-The error of the measurement $\Delta F$ is given by \tcr{[reference]}
+The error of the measurement $\Delta F$ is given by\footnote{https://science.nrao.edu/facilities/vla/docs/manuals/oss/performance/sensitivity} \tcr{[confirm this reference]}
 \begin{equation}\label{eq.delta_F}
     \Delta F={\rm SEFD}/\sqrt{n_{\rm pol}\Delta\nu\Delta t},
 \end{equation}
@@ -182,23 +182,25 @@ and we apply this value. Thus, all systems with $rF>10\Delta F$ are counted.
 
 \section{FAST estimation}\label{sec.FAST}
 
-FAST has a fixed 500-meter-dish, and a circle of 300 meter in diameter is held
-in the correct parabolic shape, being used at any one time. This
-enables its zenith angle up to $40^\circ$ and it can scan objects
-in declination range $-14^\circ 12'<\delta<65^\circ 48'$.
+FAST has a primary dish of 500 meter in diameter. The effective
+antenna aperture of FAST is 300 m, in diameter for any zenith angle
+up to $26^\circ$ and decreases to 200 m for a maximum zenith angle 
+of $40^\circ$ \citep{2016RaSc...51.1060L}.
+%This enables its zenith angle up to $40^\circ$ and it can scan objects
+%in declination range $-14^\circ 12'<\delta<65^\circ 48'$.
 The 19-beam feed-horn array at L band will be the primary survey
-instrument for FAST. For a single day it can scan total of $0.762^\circ$
+instrument for FAST. For a single day it can scan total of \tcr{$0.5^\circ$ (TBD)}
 in declination $\delta$. FAST survey strategy scans each object
 only once ($n_{\rm obs}=1$), and with its high sensitivity,
 even faint sources are identified in a single day. 
 We assume a one-month survey by FAST
 around the celestial equator for simplicity. FAST observes
-1.2 to 1.4 GHz (redshift $z_{\rm \HI}<0.2$), so objects on celestial equator
-have average transit time $\Delta t \simeq 10\ {\rm sec.}$
+1.02 to 1.42 GHz (redshift $z_{\rm \HI}<0.39$), so objects on celestial equator
+have average transit time $\Delta t \simeq \tcr{12}\ {\rm sec.}$
 Taking $\Delta\nu\simeq$ 9 kHz, $n_{\rm pol}=2$
 (dual polarized system), and
 ${\rm SEFD}=1$ Jy for FAST.
-we have $\Delta F \simeq\ 2.3 {\rm mJy}$.
+we have $\Delta F \simeq\ 2.3\ {\rm mJy}$.
 Taking into account the $\nu^{-0.7}$ flux boost at lower
 frequencies, $rF>10\Delta F$ requires $F\gtrsim 0.11\ {\rm Jy}$ on 1.4 GHz.
 
@@ -206,8 +208,8 @@ One-month-scan ($n_{\rm obs}=30$) around celestial equator by FAST will have
 $N_R\simeq 10^4$ sources whose $F\gtrsim 0.11\ {\rm Jy}$ on 1.4 GHz.
 We further assume the independency between $n_R(F)$, $n_R(z)$
 and $n_{\rm\HI}(z)$, from $n_{\rm system}(z)$ by integrating
-equation (\ref{eq.n_system}), there will be $N_{\rm system}\simeq 90 {\rm /month}$ absorption
-systems found in redshift range $0<z<0.2$.
+equation (\ref{eq.n_system}), there will be $N_{\rm system}\simeq \tcr{210} {\rm /month}$ absorption
+systems found in redshift range $0<z<0.39$.
 
 
 \section{Tianlai estimation}\label{sec.Tianlai}
@@ -255,14 +257,14 @@ SEFD should be neglected.
 
 For Tianlai, equation (\ref{eq.N_R_eff}) gives $N_R\simeq 1.3\times 10^4$,
 and applying it to equation (\ref{eq.n_system}) again
-we get $N_{\rm system}\simeq 80 {\rm /year}$ absorption
+we get $N_{\rm system}\simeq \tcr{80} {\rm /year}$ absorption
 systems found in redshift range $0.58<z<0.78$.
 
 
 \section{Conclusion}\label{sec.conclusion}
 We forecast the capability of FAST and Tianlai telescopes to search 21-cm
 absorption systems. According to our assumptions, FAST is able
-to find $\simeq 90$ systems per month
+to find $\simeq 210$ systems per month
 whereas TianLai can find $\simeq 80$ systems per year.
 Comparing the results between two quite different telescopes --
 high sensitivity FAST and large FoV Tianlai, we find the former is
