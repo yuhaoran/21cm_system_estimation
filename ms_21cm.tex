@@ -52,7 +52,7 @@ Five-hundred-meter Aperture Spherical radio Telescope (FAST) and
 Tianlai 21-cm cosmology experiment (Tianlai).
 Facilitated by either the high sensitivity (FAST)
 or the wide field of view (Tianlai) of these telescopes,
-\tcr{[more than a thousand for FAST (and Tianlai)] (to be determined by final calculations)} 21-cm absorption systems can be discovered in a few years,
+more than a thousand 21-cm absorption systems can be discovered in a few years,
 representing orders of magnitude improvement over the cumulative discoveries
 in the past half a century. 
 \keywords{}
@@ -111,26 +111,28 @@ Conclusions are made in section \ref{sec.conclusion}.
 To find possible 21-cm absorption systems, radio telescopes
 could be devised to scan the radio sources in
 NRAO VLA Sky Survey (NVSS)\footnote{http://www.cv.nrao.edu/nvss/}.
-If we assume the distributions of radio sources $n_R$ and
-{\HI} clouds $n_{\rm \HI}$ are uncorrelated, the redshift
+\tcr{If we assume the distributions of radio sources and
+{\HI} clouds are uncorrelated over the sky}, the redshift
 distribution of the 21-cm absorption systems $n_{\rm system}$ would be
-\tcr{(still need a volume filling factor $K(z)$?)}
 \begin{equation}\label{eq.n_system}
-    n_{\rm system}(z)=\tcr{n_{\rm \HI}(z)}\int_z^\infty n_R(z')\diff z'
+    n_{\rm system}(z)=n_{\rm \HI}^*(z)\int_z^\infty n_R(z')\diff z',
 \end{equation}
-\tcr{(In my definition,
-$n_{\rm \HI}$ is the cloud regardless observable or not, 
-and $n_{\rm system}$ is the absorber, associated with a background source, absorbing the
-source flux on the line of sight to Earth.)}
-regardless of the observation sensitivity,
-where $n_R(z)$ is given by equation (26) of \cite{2010A&ARv..18....1D}.
-Spacial distribution of {\HI} is poorly understood and is to be
-studied in upcoming surveys.
-Recent studies show that the number density of
-absorbers to be $\diff \tcr{n_{\rm \HI}}/\diff z= 0.045\pm0.006$
+\tcr{where $n_R$ is the redshift distribution of radio sources over the sky
+(given by equation (26) of \cite{2010A&ARv..18....1D}), and
+$n_{\rm \HI}^*(z)$ is the number of occupation of {\HI} clouds
+per any given line of sight. Note that, unlike $n_R$ and $n_{\rm system}$,
+ $n_{\rm \HI}^*(z)$ is not an
+integration of volume so we do not need a volume filling factor in
+equation \ref{eq.n_system}.}
+However, this spacial distribution of {\HI} is poorly understood and is to be
+studied in upcoming surveys. Recent studies show that the number density of
+absorbers to be $\diff n_{\rm \HI}/\diff z=n_{\rm \HI}^*(z)= 0.045\pm0.006$
 per line of sight at low and medium redshift
 \citep{2005ARA&A..43..861W,2007ASSP....3..501Z}, so we apply this value
-in the following forcast.
+in the following forcast. \tcr{Equation \ref{eq.n_system} gives the
+{\HI} cloud occupation regardless of observabilty, based on which
+we calculate the detections considering sensitivities.}
+
 Observation sensitivity depends on the background fluxes and foreground
 absorptions (current section), as well as telescope configurations and
 observation strategies (section \ref{sec.FAST},\ref{sec.Tianlai}).
@@ -139,15 +141,20 @@ NVSS contains 2 million sources (with declination $\delta >-40^\circ$,
 cover 82\% of the sky) stronger than 2.5
 mJy at $\nu=$1.4 GHz \citep{1998AJ....115.1693C} and their flux
 distribution $n_R(F)$ is given by \cite{1984ApJ...287..461C}.
+\tcr{The observed flux is already lowered by the 21cm absorption if there is any on
+the line of sight, so the actual signal to noise of the absorption line
+is higher. Due to the limited knowledge of absorption system properties
+we ignore this factor for now.}
 Redshifted {\HI} clouds absorb lower frequency bands where
 the radio sources are typically brighter by $\nu^{-0.7}$
 \citep{1998AJ....115.1693C}, or $(1+z_{\rm \HI})^{0.7}$.
-The error of the measurement $\Delta F$ is given by\footnote{https://science.nrao.edu/facilities/vla/docs/manuals/oss/performance/sensitivity} \tcr{[confirm this reference]}
+The error of the measurement $\Delta F$ is given by\footnote{https://science.nrao.edu/facilities/vla/docs/manuals/oss/performance/sensitivity}
 \begin{equation}\label{eq.delta_F}
-    \tcr{\Delta F=T_{\rm sys}A_{\rm eff}^{-1}/\sqrt{n_{\rm pol}\Delta\nu\Delta t}},
+    \Delta F=T_{\rm sys}A_{\rm eff}^{-1}/\sqrt{n_{\rm pol}\Delta\nu\Delta t},
 \end{equation}
 where
-\tcr{$T_{\rm sys}$ and $A_{\rm eff}$ are system temperature and effective receiving area,}
+\tcr{$T_{\rm sys}$ and $A_{\rm eff}$ are system temperature and effective receiving area,
+and $T_{\rm sys}A_{\rm eff}^{-1}$ is just the system equivalent flux density (SEFD).}
 %SEFD \tcr{(or $T_{\rm sys}$ TBD)} is the system equivalent flux density,
 $n_{\rm pol}$
 is the number of polarizations, $\Delta\nu$ is the line width and
@@ -197,7 +204,7 @@ of $40^\circ$ \citep{2016RaSc...51.1060L}.
 %This enables its zenith angle up to $40^\circ$ and it can scan objects
 %in declination range $-14^\circ 12'<\delta<65^\circ 48'$.
 The 19-beam feed-horn array at L band will be the primary survey
-instrument for FAST. For a single day it can scan total of \tcr{$0.5^\circ$ (TBD)}
+instrument for FAST. For a single day it can scan total of $0.5^\circ$
 in declination $\delta$. FAST survey strategy scans each object
 only once ($n_{\rm obs}=1$), and with its high sensitivity,
 even faint sources are identified in a single day. 
@@ -207,9 +214,8 @@ around the celestial equator for simplicity. FAST observes
 have average transit time $\Delta t \simeq \tcr{12}\ {\rm sec.}$
 Taking $\Delta\nu\simeq$ 9 kHz, $n_{\rm pol}=2$ (dual polarized system),
 \tcr{$T_{\rm sys}\sim 20$ K and $A_{\rm eff}\sim 7\times 10^4$ m$^2$,
-(how do we get ${\rm SEFD}=1$ Jy for FAST???? In Li \& Pan (2016), I'm also
-confused how to get $A/T=2000$ m/K from these knwon numbers.)},
-we have $\Delta F \simeq\ 2.3\ {\rm mJy}$.
+we get ${\rm SEFD}\sim 1$ Jy for FAST},
+then we have $\Delta F \simeq\ 2.3\ {\rm mJy}$.
 Taking into account the $\nu^{-0.7}$ flux boost at lower
 frequencies, $rF>10\Delta F$ requires $F\gtrsim 0.11\ {\rm Jy}$ on 1.4 GHz.
 
@@ -238,7 +244,7 @@ $A_{\rm eff}$. On the other hand, higher declination objects
 have longer integration time per day. Thus, $\Delta F$ is
 a function of $\delta$, 
 \begin{equation}\label{eq.delta_F_delta}
-    \Delta F(\delta) = \frac{\tcr{T_{\rm sys}A_{\rm eff}^{-1}}}{\cos(\delta-\phi_{\rm site})}
+    \Delta F(\delta) = \frac{T_{\rm sys}A_{\rm eff}^{-1}}{\cos(\delta-\phi_{\rm site})}
     {\sqrt{\frac{\cos\delta}{n_{\rm pol}\Delta\nu\Delta t(\delta=0)}}},
 \end{equation}
 where $\Delta t(\delta=0)\simeq 1.17\times 10^5\ {\rm sec}$ is the
